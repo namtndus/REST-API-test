@@ -1,10 +1,23 @@
 package com.example.post.post.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class PostRequestDto {
 
     private String account;
     private String email;
     private String password;
+
+    @JsonProperty("phone_number")
+    private String phoneNumber;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public String getAccount() {
         return account;
@@ -30,12 +43,14 @@ public class PostRequestDto {
         this.password = password;
     }
 
+
     @Override
     public String toString() {
         return "PostRequestDto{" +
                 "account='" + account + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
 }
